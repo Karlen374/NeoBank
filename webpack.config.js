@@ -3,13 +3,13 @@ const path = require('path');
 const HTMLWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
-  mode: "development",
-  entry: ["@babel/polyfill","./src/index.tsx"],
+  mode: 'development',
+  entry: ['@babel/polyfill', './src/index.tsx'],
   plugins: [
     new HTMLWebpackPlugin({
-      template: "./src/index.html"
+      template: './src/index.html',
     }),
-    new CleanWebpackPlugin()
+    new CleanWebpackPlugin(),
   ],
   resolve: {
     alias: {
@@ -25,25 +25,25 @@ module.exports = {
   },
   module: {
     rules: [
-      { 
-        test: /\.ts$/, 
+      {
+        test: /\.ts$/,
         exclude: '/node_modules/',
         use: {
           loader: 'babel-loader',
-          options:{
-            presets:['@babel/preset-typescript']
-          }
-        }
+          options: {
+            presets: ['@babel/preset-typescript'],
+          },
+        },
       },
-      { 
-        test: /\.tsx$/, 
+      {
+        test: /\.tsx$/,
         exclude: '/node_modules/',
         use: {
           loader: 'babel-loader',
-          options:{
-            presets:['@babel/preset-react','@babel/preset-env']
-          }
-        }
+          options: {
+            presets: ['@babel/preset-react', '@babel/preset-typescript'],
+          },
+        },
       },
       {
         test: /\.s(a|c)ss$/,
@@ -75,7 +75,7 @@ module.exports = {
           },
         ],
       },
-    ]
+    ],
   },
   devServer: {
     historyApiFallback: true,
@@ -84,4 +84,4 @@ module.exports = {
     hot: true,
     port: 5000,
   },
-}
+};

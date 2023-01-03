@@ -1,0 +1,63 @@
+.advertisting-section{
+  background: linear-gradient(180.8deg, rgba(203, 213, 224, 0.624) 34.33%, rgba(254, 235, 200, 0.56) 64.27%);
+  box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.08), 0px 2px 4px rgba(0, 0, 0, 0.2);
+  border-radius: 28.8px;
+  display:flex;
+  justify-content: space-between;
+  padding:48px 100px 48px 32px;
+  &__info{
+    &_header{
+      font-style: normal;
+      font-weight: 700;
+      font-size: 48px;
+      letter-spacing: 0.02em;
+      color: #FFFFFF;
+    }
+    &_subHeader{
+      font-style: normal;
+      font-weight: 500;
+      font-size: 16px;
+      letter-spacing: 0.02em;
+      color: #2D3748;
+      margin-top:48px;
+    }
+  }
+  &__terms{
+    display:flex;
+    margin: 32px 0;
+  }
+  &__term{
+    margin-left: 80px;
+    &:first-child{
+      margin:0;
+    }
+    &_header{
+      font-style: normal;
+      font-weight: 700;
+      font-size: 20px;
+      letter-spacing: 0.02em;
+      color: #3D3D3D;
+    }
+    &_subHeader{
+      font-style: normal;
+      font-weight: 500;
+      font-size: 16px;
+      letter-spacing: 0.02em;
+      color: #3D3D3D;
+    }
+  }
+  button{
+    padding: 8px;
+    border-radius: 8px;
+  }
+}
+
+@media only screen and (max-width: 900px) {
+  .advertisting-section{
+    display:flex;
+    justify-content: space-between;
+    flex-direction: column-reverse;
+    text-align: center;
+    padding:32px;
+  }
+}
