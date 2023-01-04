@@ -1,6 +1,6 @@
-import { useHttp } from '../hooks/useHttp';
+import { useHttp } from '@utils';
 
-const useExchangeServices = () => {
+export const useExchangeServices = () => {
   const _apiBase = 'https://currency-exchange.p.rapidapi.com/exchange';
   const { request } = useHttp();
 
@@ -16,5 +16,3 @@ const useExchangeServices = () => {
     getExchangeValue,
   };
 };
-
-export default useExchangeServices;

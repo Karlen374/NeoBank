@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import useExchangeServices from '../../services/exchangeValueService';
+import { useExchangeServices } from '@utils';
 
 interface IExchangeItem{
   value:string;

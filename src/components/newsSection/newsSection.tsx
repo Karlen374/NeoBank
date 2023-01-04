@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import { INews } from '../../types/INews';
+import { useNewsServices, INews } from '@utils';
 import NewsItem from './newsItem';
-import useNewsServices from '../../services/newsService';
 import './newsSection.scss';
 
 const NewsSection = () => {

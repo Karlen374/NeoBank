@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import useMailServices from '../../services/mailService';
+import { useMailServices } from '@utils';
 import './supportSection.scss';
 
 const SupportSection = () => {

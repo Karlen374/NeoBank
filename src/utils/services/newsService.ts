@@ -1,7 +1,6 @@
-import { INews } from '../types/INews';
-import { useHttp } from '../hooks/useHttp';
+import { INews, useHttp } from '@utils';
 
-const useNewsServices = () => {
+export const useNewsServices = () => {
   const _apiBase = 'https://newsapi.org/v2/top-headlines?country=us&category=business';
   const _apiKey = '85a8a5f6d8314c139f997a018ccd7965';
   const { request } = useHttp();
@@ -24,5 +23,3 @@ const useNewsServices = () => {
     getNews,
   };
 };
-
-export default useNewsServices;

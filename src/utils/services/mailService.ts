@@ -1,6 +1,6 @@
-import { useHttp } from '../hooks/useHttp';
+import { useHttp } from '@utils';
 
-const useMailServices = () => {
+export const useMailServices = () => {
   const _apiBase = 'http://localhost:8080';
   const { request } = useHttp();
 
@@ -13,5 +13,3 @@ const useMailServices = () => {
     postEmail,
   };
 };
-
-export default useMailServices;

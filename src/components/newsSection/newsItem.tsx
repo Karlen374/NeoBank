@@ -1,6 +1,6 @@
 import React from 'react';
 import './newsSection.scss';
-import { INews } from '../../types/INews';
+import { INews } from '@utils';
 
 interface INewsItem{
   data:INews;

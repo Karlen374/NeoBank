@@ -22,13 +22,17 @@ const CardCustomizeSection = () => {
     handleSubmit,
     reset,
   } = useForm<IFormInput>({ mode: 'onBlur' });
+  const customizeCard = (data: IFormInput) => {
+    console.log(data);
+    reset();
+  };
 
   return (
     <section className="customize-section wrapper">
       <div className="customize-section__block">
         <CustomizeSectionHeader />
         <h3 className="customize-section__contact">Contact Information</h3>
-        <form>
+        <form onSubmit={handleSubmit(customizeCard)}>
           <div className="customize-section__information">
             <div className="customize-section__input">
               <label className="customize-section__input_necessary" htmlFor="lastName">Your last name</label>
@@ -75,11 +79,11 @@ const CardCustomizeSection = () => {
             </div>
             <div className="customize-section__input">
               <label className="customize-section__input_necessary" htmlFor="select">Select term</label>
-              <select className="customize-section__input_necessary" {...register('term')} name="select" id="select">
-                <option value="6">6 month</option>
-                <option value="12" selected> 12 month</option>
-                <option value="18">18 month</option>
-                <option value="24">24 month</option>
+              <select className="customize-section__input_default" defaultValue={6} {...register('term')} name="select" id="select">
+                <option value={6}>6 month</option>
+                <option value={12}>12 month</option>
+                <option value={18}>18 month</option>
+                <option value={24}>24 month</option>
               </select>
             </div>
 
