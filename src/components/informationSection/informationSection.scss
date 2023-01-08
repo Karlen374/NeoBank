@@ -157,6 +157,9 @@
       color: #7B7454;
       margin-top:56px;
     }
+    svg{
+      cursor:pointer;
+    }
     &_closed{
       padding:32px;
       border-bottom:1px solid #E2E8F0;
@@ -166,7 +169,8 @@
       p{
         display: none;
       }
-      img{
+      svg{
+        cursor: pointer;
         transform: rotate(180deg);
       }
     }

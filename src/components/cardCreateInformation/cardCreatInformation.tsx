@@ -1,7 +1,7 @@
 import React from 'react';
 import './cardCreatInformation.scss';
 
-const CardCreateInformation = () => {
+export const CardCreateInformation = () => {
   return (
     <div className="card-creat wrapper">
       <h1>How to get a card</h1>
@@ -29,4 +29,3 @@ const CardCreateInformation = () => {
     </div>
   );
 };
-export default CardCreateInformation;

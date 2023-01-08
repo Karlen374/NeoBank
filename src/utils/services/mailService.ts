@@ -6,7 +6,7 @@ export const useMailServices = () => {
 
   const postEmail = async (email:string) => {
     const body = JSON.stringify({ email });
-    const res = await request(`${_apiBase}/email`, 'POST', body, { 'Content-Type': 'application/json' });
+    const res = await request(`${_apiBase}/email`, 'POST', body, { 'Content-Type': 'application/json' }, true);
     return res;
   };
   return {

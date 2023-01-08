@@ -1,7 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import LoanPage from '../views/loanPage/loanPage';
-import MainPage from '../views/mainPage/MainPage';
+import MainPage from '../views/mainPage/mainPage';
 import AppFooter from './shared/appFooter/appFooter';
 import AppHeader from './shared/appHeader/appHeader';
 

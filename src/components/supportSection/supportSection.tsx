@@ -1,17 +1,27 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useMailServices } from '@utils';
 import './supportSection.scss';
 
-const SupportSection = () => {
+export const SupportSection = () => {
   const [mail, setMail] = useState('');
+  const [showMailInput, setShowMailInput] = useState(true);
   const { postEmail } = useMailServices();
+
   const handleChangeMail = (e: React.ChangeEvent<HTMLInputElement>) => {
     setMail(e.target.value);
   };
+  useEffect(() => {
+    if (localStorage.getItem('email')) {
+      setShowMailInput(false);
+    }
+  }, []);
 
   const postEmailAdress = async () => {
-    const data = await (postEmail(mail));
-    console.log(data);
+    const responseStatusCode = await (postEmail(mail));
+    if (responseStatusCode === 200) {
+      localStorage.setItem('email', 'true');
+      setShowMailInput(false);
+    }
   };
 
   const handleSubmitMail = (e: React.FormEvent<HTMLFormElement>) => {
@@ -20,6 +30,19 @@ const SupportSection = () => {
     setMail('');
   };
 
+  const content = showMailInput ? (
+    <form onSubmit={handleSubmitMail}>
+      <div className="support-section__input">
+        <div className="support-section__input_email">
+          <input value={mail} onChange={handleChangeMail} type="email" placeholder="Your email" />
+        </div>
+        <div className="support-section__input_submit">
+          <input type="submit" value="subscribe" />
+        </div>
+      </div>
+    </form>
+  ) : <p>You are already subscribed to the bank&apos;s newsletter</p>;
+
   return (
     <section className="support-section wrapper">
       <div className="support-section__header">
@@ -27,17 +50,7 @@ const SupportSection = () => {
         <h2>Subscribe Newsletter & get</h2>
         <p>Bank News</p>
       </div>
-      <form onSubmit={handleSubmitMail}>
-        <div className="support-section__input">
-          <div className="support-section__input_email">
-            <input value={mail} onChange={handleChangeMail} type="email" placeholder="Your email" />
-          </div>
-          <div className="support-section__input_submit">
-            <input type="submit" value="subscribe" />
-          </div>
-        </div>
-      </form>
+      {content}
     </section>
   );
 };
-export default SupportSection;

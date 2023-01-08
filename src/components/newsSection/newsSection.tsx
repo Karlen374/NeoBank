@@ -3,7 +3,7 @@ import { useNewsServices, INews } from '@utils';
 import NewsItem from './newsItem';
 import './newsSection.scss';
 
-const NewsSection = () => {
+export const NewsSection = () => {
   const { getNews } = useNewsServices();
   const [news, setNews] = useState<null | INews[]>();
   const [viewNewsStart, setViewNewsStart] = useState(0);
@@ -62,4 +62,3 @@ const NewsSection = () => {
     </section>
   );
 };
-export default NewsSection;

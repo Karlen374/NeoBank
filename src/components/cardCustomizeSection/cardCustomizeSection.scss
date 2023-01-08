@@ -99,10 +99,40 @@
     flex-wrap: wrap;
     margin-top:26px;
   }
+  select:focus{
+    border-color:#5B35D5;
+  }
   &__input{
     display:flex;
     flex-direction: column;
     margin-top:16px;
+    div:focus{
+      border-color: #5B35D5;
+    }
+    div{
+      width: 297px;
+      display:flex;
+      input:focus{
+        border-color: #5B35D5;
+      }
+      input{
+        background: #F9F5E3;
+        border: 1px solid rgba(128, 128, 128, 0.2);
+        border-radius: 6px;
+        font-weight: 400;
+        font-size: 14px;
+        padding:13px 16px;
+        color: #808080;
+        width:297px;
+      }
+      input[type=date]::-webkit-calendar-picker-indicator {
+        align-items: left;
+      }
+      svg{
+        position: relative;
+        right: 25px;
+      }
+    }
     &_necessary{
       color: #1A202C;
       font-weight: 500;
@@ -141,7 +171,8 @@
       padding:13px 16px;
       color: #808080;
       width:297px;
-      background: #F9F5E3 url(../../public/icons/Subtract.svg) no-repeat 265px center;
+      // background: #F9F5E3 url(../../public/icons/Subtract.svg) no-repeat 265px center;
+      background-color: #F9F5E3;
     }
     &_success{
       border: 1px solid rgba(128, 128, 128, 0.2);
@@ -191,4 +222,41 @@
       border:none;
     }
   }
+}
+
+.customize__input{
+  display:flex;
+  input:focus{
+    border-color: #5B35D5;
+  }
+  input{
+    border-radius: 6px;
+    font-weight: 400;
+    font-size: 14px;
+    height: 40px;
+    border: 1px solid rgba(128, 128, 128, 0.2);
+    padding:13px 16px;
+    color: #808080;
+    // position:relative;
+  }
+  svg{
+    position: relative;
+    right: 25px;
+  }
+  // height: 100%;
+  // display:flex;
+  // justify-content: space-between;
+  // align-items: center;
+  // border-radius: 6px;
+  // font-weight: 400;
+  // font-size: 14px;
+  // height: 40px;
+  // border: 1px solid rgba(128, 128, 128, 0.2);
+  // padding:13px 16px;
+  // color: #808080;
+  // width:297px;
+  // background-color: #F9F5E3;
+  // input:focus{
+  //   border-color: #5B35D5;
+  // }
 }

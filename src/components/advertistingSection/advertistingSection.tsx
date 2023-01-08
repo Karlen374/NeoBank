@@ -2,7 +2,7 @@ import React from 'react';
 import './AdvertistingSection.scss';
 import CardImage from '../../public/assets/cardImage.png';
 
-const AdvertistingSection = () => {
+export const AdvertistingSection = () => {
   return (
     <section className="advertisting-section wrapper">
       <div className="advertisting-section__info">
@@ -34,4 +34,3 @@ const AdvertistingSection = () => {
     </section>
   );
 };
-export default AdvertistingSection;

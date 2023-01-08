@@ -1,7 +1,7 @@
 import React from 'react';
 import './cardCustomizeSection.scss';
 
-const CardCreat = () => {
+export const CardCreat = () => {
   return (
     <div className="card-creat wrapper">
       <h1>How to get a card</h1>
@@ -29,4 +29,3 @@ const CardCreat = () => {
     </div>
   );
 };
-export default CardCreat;

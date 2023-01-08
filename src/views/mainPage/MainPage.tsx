@@ -1,8 +1,10 @@
 import React from 'react';
-import ExchangeValuesSection from '../../components/exchangeValuesSection/exchangeValuesSection';
-import CardChooseSection from '../../components/cardChooseSection/cardChooseSection';
-import NewsSection from '../../components/newsSection/newsSection';
-import SupportSection from '../../components/supportSection/supportSection';
+import {
+  ExchangeValuesSection,
+  CardChooseSection,
+  NewsSection,
+  SupportSection,
+} from '@components';
 
 const MainPage = () => {
   return (

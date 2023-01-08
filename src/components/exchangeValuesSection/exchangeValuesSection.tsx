@@ -6,7 +6,7 @@ import worldImg from '../../public/assets/world.png';
 
 const valuesMap = ['USD', 'EUR', 'CNY', 'JPY', 'GBP', 'CAD'];
 
-const ExchangeValuesSection = () => {
+export const ExchangeValuesSection = () => {
   return (
     <>
       <section className="exchange-section wrapper">
@@ -35,4 +35,3 @@ const ExchangeValuesSection = () => {
     </>
   );
 };
-export default ExchangeValuesSection;

@@ -1,26 +1,52 @@
 import React, { useState } from 'react';
 import AboutCard from './informations/aboutCard';
 import CashBack from './informations/cashback';
-import Faq from './informations/Faq';
+import Faq from './informations/faq';
 import RatesAndConditions from './informations/ratesAndConditions';
 import './informationSection.scss';
 
-const InformationSection = () => {
-  const [informationNav, setInformationNav] = useState<1 | 2 | 3| 4>(1);
+interface INavItems{
+  name:string;
+  id: 0 | 1 | 2 | 3;
+}
+const navItems:INavItems[] = [
+  {
+    name: 'About card',
+    id: 0,
+  },
+  {
+    name: 'Rates and conditions',
+    id: 1,
+  },
+  {
+    name: 'Cashback',
+    id: 2,
+  },
+  {
+    name: 'FAQ',
+    id: 3,
+  },
+];
+
+export const InformationSection = () => {
+  const [informationNavId, setinformationNavId] = useState<0 | 1 | 2| 3>(0);
 
   return (
     <section className="information-section wrapper">
       <div className="information-section__navigation">
-        <p onClick={() => setInformationNav(1)} className="information-section__navigation_active">About card</p>
-        <p onClick={() => setInformationNav(2)}>Rates and conditions</p>
-        <p onClick={() => setInformationNav(3)}>Cashback</p>
-        <p onClick={() => setInformationNav(4)}>FAQ</p>
+        {
+          navItems.map((item) => {
+            const style = (item.id === informationNavId) ? 'information-section__navigation_active' : null;
+            return (
+              <p key={item.id} className={style} onClick={() => setinformationNavId(item.id)}>{item.name}</p>
+            );
+          })
+        }
       </div>
-      {informationNav === 1 && <AboutCard />}
-      {informationNav === 2 && <RatesAndConditions />}
-      {informationNav === 3 && <CashBack />}
-      {informationNav === 4 && <Faq />}
+      {informationNavId === 0 && <AboutCard />}
+      {informationNavId === 1 && <RatesAndConditions />}
+      {informationNavId === 2 && <CashBack />}
+      {informationNavId === 3 && <Faq />}
     </section>
   );
 };
-export default InformationSection;

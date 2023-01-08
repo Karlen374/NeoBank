@@ -1,8 +1,10 @@
 import React from 'react';
-import InformationSection from '../../components/informationSection/informationSection';
-import AdvertistingSection from '../../components/advertistingSection/advertistingSection';
-import CardCustomizeSection from '../../components/cardCustomizeSection/cardCustomizeSection';
-import CardCreateInformation from '../../components/cardCreateInformation/cardCreatInformation';
+import {
+  AdvertistingSection,
+  InformationSection,
+  CardCreateInformation,
+  CardCustomizeSection,
+} from '@components';
 
 const LoanPage = () => {
   return (

@@ -37,12 +37,13 @@ module.exports = {
       {
         test: /\.ts$/,
         exclude: '/node_modules/',
-        use: {
-          loader: 'babel-loader',
-          options: {
-            presets: ['@babel/preset-typescript'],
-          },
-        },
+        use: ['ts-loader'],
+        // use: {
+        //   loader: 'babel-loader',
+        //   options: {
+        //     presets: ['@babel/preset-typescript'],
+        //   },
+        // },
       },
       {
         test: /\.tsx$/,
@@ -91,6 +92,6 @@ module.exports = {
     open: true,
     compress: true,
     hot: true,
-    port: 5000,
+    port: 3000,
   },
 };

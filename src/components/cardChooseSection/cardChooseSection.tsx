@@ -6,7 +6,7 @@ import cardImage2 from '../../public/assets/cardImage2.png';
 import cardImage3 from '../../public/assets/cardImage3.png';
 import cardImage4 from '../../public/assets/cardImage4.png';
 
-const CardChooseSection = () => {
+export const CardChooseSection = () => {
   return (
     <section className="card-section wrapper">
       <div className="card-section__design">
@@ -33,5 +33,3 @@ const CardChooseSection = () => {
     </section>
   );
 };
-
-export default CardChooseSection;
