@@ -1,6 +1,5 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './cardCustomizeSection.scss';
-import CustomizeInput from './customizeInput';
 
 interface ICustomizeSectionHeader{
   amount:number;
@@ -32,7 +31,6 @@ const CustomizeSectionHeader = ({ onChange, amount }: ICustomizeSectionHeader) =
         <h3 className="customize-section__inputAmount_header">You have chosen the amount</h3>
         <input type="number" min={15000} max={600000} onChange={handleAmountChange} value={amount} />
       </div>
-      <CustomizeInput />
     </div>
   );
 };
