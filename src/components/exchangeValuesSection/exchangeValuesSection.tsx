@@ -1,10 +1,9 @@
 import React from 'react';
 import './exchangeValuesSection.scss';
+import { exchangeValuesMap } from '@utils';
 import BankIcon from '../../public/icons/bankIcon';
 import ExchangeItem from './exchangeItem';
 import worldImg from '../../public/assets/world.png';
-
-const valuesMap = ['USD', 'EUR', 'CNY', 'JPY', 'GBP', 'CAD'];
 
 export const ExchangeValuesSection = () => {
   return (
@@ -18,7 +17,7 @@ export const ExchangeValuesSection = () => {
           <div>
             <p className="exchange-section__rate_subHeader">Currency</p>
             <div className="exchange-section__rateBlock">
-              {valuesMap.map((item) => <ExchangeItem value={item} key={item} />)}
+              {exchangeValuesMap.map((item) => <ExchangeItem value={item} key={item} />)}
             </div>
             <p className="exchange-section__rate_more">All courses</p>
           </div>

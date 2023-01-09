@@ -1,9 +1,9 @@
 import React from 'react';
 import './cardChooseSection.scss';
+import { cardFeatures } from '@utils';
 import SuccessIcon from '../../public/icons/successIcon';
 import Illustration from '../../public/assets/Illustration.png';
 
-const features = ['Powerfull online protection.', 'Cashback without borders.', 'Personal design', 'Work anywhere in the world'];
 const CardFeatures = () => {
   return (
     <div className="card-section__features">
@@ -16,7 +16,7 @@ const CardFeatures = () => {
           You can explore the features that we provide with fun and have their own functions each feature
         </p>
         {
-          features.map((item) => {
+          cardFeatures.map((item) => {
             return (
               <div key={item} className="card-section__features_item">
                 <span>
