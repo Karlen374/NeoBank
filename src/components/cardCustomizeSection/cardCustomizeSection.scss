@@ -1,0 +1,226 @@
+.customize-section{
+  padding-bottom: 96px;
+  &__block{
+    background-color: #fff;
+    padding: 32px;
+    box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.08), 0px 2px 4px rgba(0, 0, 0, 0.2);
+    border-radius: 28px;
+  }
+  h3{
+    font-weight: 700;
+    font-size: 20px;
+  }
+  &__amount{
+    display:flex;
+    margin-bottom: 32px;
+  }
+  &__selectAmount{
+    border-right: 1px dashed rgba(128, 128, 128, 0.4);
+    padding-right: 40px;
+  }
+  &__selectHeader{
+    display: flex;
+    align-items: center;
+    h2{
+      font-style: normal;
+      font-weight: 700;
+      font-size: 30px;
+      color: #000000;
+    }
+    p{
+      font-style: normal;
+      font-weight: 500;
+      font-size: 16px;
+      color: #000000;
+      margin-left: 198px;
+    }
+  }
+  &__selectBlock{
+    margin-top: 32px;
+    padding: 24px 24px 41px 24px;
+    border: 1px solid #5B35D5;
+    border-radius: 10px;
+    h4{
+      font-style: normal;
+      font-weight: 500;
+    }
+    &_price{
+      font-style: normal;
+      font-weight: 500;
+      margin:20px 0 10px;
+    }
+    input[type=range]{
+      width: 100%;
+      -webkit-appearance: none;
+      background: #000000;
+      &::-webkit-slider-runnable-track{
+        height: 2px;
+        background-color:  #5B35D5;
+      }
+      &::-webkit-slider-thumb {
+        -webkit-appearance: none;
+        border: none;
+        height: 24px;
+        width: 24px;
+        border-radius: 50%;
+        background: #5B35D5;
+        margin-top:-10px;
+      }
+    }
+  }
+  &__inputBorders{
+    display:flex;
+    justify-content: space-between;
+    p{
+      color: #786D6D;
+    }
+  }
+  &__inputAmount{
+    padding-left: 42px;
+    &_header{
+      font-style: normal;
+      font-weight: 700;
+      font-size: 20px;
+      color: #000000;
+      margin-bottom: 16px;
+    }
+    input{
+      font-style: normal;
+      font-weight: 500;
+      font-size: 16px;
+      color: #000000;
+      border-bottom: 1px solid rgba(128, 128, 128, 0.2);
+      padding-bottom:10px;
+    }
+  }
+  &__information{
+    display:flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-top:26px;
+  }
+  select:focus{
+    border-color:#5B35D5;
+  }
+  &__input{
+    display:flex;
+    flex-direction: column;
+    margin-top:16px;
+    div:focus{
+      border-color: #5B35D5;
+    }
+    div{
+      width: 297px;
+      display:flex;
+      input:focus{
+        border-color: #5B35D5;
+      }
+      input{
+        background: #F9F5E3;
+        border: 1px solid rgba(128, 128, 128, 0.2);
+        border-radius: 6px;
+        font-weight: 400;
+        font-size: 14px;
+        padding:13px 16px;
+        color: #808080;
+        width:297px;
+      }
+      input[type=date]::-webkit-calendar-picker-indicator {
+        align-items: left;
+      }
+      svg{
+        position: relative;
+        right: 25px;
+      }
+    }
+    &_necessary{
+      color: #1A202C;
+      font-weight: 500;
+      margin-bottom: 8px;
+      &::after{
+        content:'*';
+        color: #FF0000;
+        margin-left: 5px;
+      }
+    }
+    &_notNecessary{
+      color: #1A202C;
+      font-weight: 500;
+      margin-bottom: 8px;
+    }
+    &_errorMessage{
+      color: #FF5631;
+      font-weight: 500;
+      font-size: 16px;
+    }
+    &_default{
+      background: #F9F5E3;
+      border: 1px solid rgba(128, 128, 128, 0.2);
+      border-radius: 6px;
+      font-weight: 400;
+      font-size: 14px;
+      padding:13px 16px;
+      color: #808080;
+      width:297px;
+    }
+    &_error{
+      border: 2px solid #FF5631;
+      border-radius: 6px;
+      font-weight: 400;
+      font-size: 14px;
+      padding:13px 16px;
+      color: #808080;
+      width:297px;
+      // background: #F9F5E3 url(../../public/icons/Subtract.svg) no-repeat 265px center;
+      background-color: #F9F5E3;
+    }
+    &_success{
+      border: 1px solid rgba(128, 128, 128, 0.2);
+      border-radius: 6px;
+      font-weight: 400;
+      font-size: 14px;
+      padding:13px 16px;
+      color: #808080;
+      width:297px;
+      background: #F9F5E3 url(../../public/icons/send.svg) no-repeat 265px center;
+    }
+  }
+  &__button{
+    display: flex;
+    justify-content: end;
+    margin-top:24px;
+    button{
+      padding:8px 30px;
+      border-radius: 8px;
+    }
+  }
+}
+
+@media only screen and (max-width: 700px) {
+  .customize-section{
+    &__selectHeader{
+      p{
+        margin-left:100px;
+      }
+    }
+    &__information{
+      justify-content: center;
+    }
+    &__contact{
+      text-align: center;
+    }
+    &__amount{
+      display:flex;
+      flex-direction: column;
+      text-align: center;
+    }
+    &__selectBlock{
+      margin:32px 0 20px;
+    }
+    &__selectAmount{
+      padding:0;
+      border:none;
+    }
+  }
+}
+

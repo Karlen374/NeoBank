@@ -1,15 +1,19 @@
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const path = require('path');
 const HTMLWebpackPlugin = require('html-webpack-plugin');
+const { SourceMapDevToolPlugin } = require('webpack');
 
 module.exports = {
-  mode: "development",
-  entry: ["@babel/polyfill","./src/index.tsx"],
+  mode: 'development',
+  entry: ['@babel/polyfill', './src/index.tsx'],
   plugins: [
     new HTMLWebpackPlugin({
-      template: "./src/index.html"
+      template: './src/index.html',
     }),
-    new CleanWebpackPlugin()
+    new SourceMapDevToolPlugin({
+      filename: '[file].map',
+    }),
+    new CleanWebpackPlugin(),
   ],
   resolve: {
     alias: {
@@ -25,25 +29,31 @@ module.exports = {
   },
   module: {
     rules: [
-      { 
-        test: /\.ts$/, 
-        exclude: '/node_modules/',
-        use: {
-          loader: 'babel-loader',
-          options:{
-            presets:['@babel/preset-typescript']
-          }
-        }
+      {
+        test: /\.js$/,
+        enforce: 'pre',
+        use: ['source-map-loader'],
       },
-      { 
-        test: /\.tsx$/, 
+      {
+        test: /\.ts$/,
+        exclude: '/node_modules/',
+        use: ['ts-loader'],
+        // use: {
+        //   loader: 'babel-loader',
+        //   options: {
+        //     presets: ['@babel/preset-typescript'],
+        //   },
+        // },
+      },
+      {
+        test: /\.tsx$/,
         exclude: '/node_modules/',
         use: {
           loader: 'babel-loader',
-          options:{
-            presets:['@babel/preset-react','@babel/preset-env']
-          }
-        }
+          options: {
+            presets: ['@babel/preset-react', '@babel/preset-typescript'],
+          },
+        },
       },
       {
         test: /\.s(a|c)ss$/,
@@ -75,13 +85,13 @@ module.exports = {
           },
         ],
       },
-    ]
+    ],
   },
   devServer: {
     historyApiFallback: true,
     open: true,
     compress: true,
     hot: true,
-    port: 5000,
+    port: 3000,
   },
-}
+};

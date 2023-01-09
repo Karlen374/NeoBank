@@ -1,0 +1,122 @@
+.exchange-section{
+  margin-top:48px;
+  background: linear-gradient(358.2deg, rgba(178, 178, 178, 0.8) 8.06%, rgba(178, 178, 178, 0) 67.93%), rgba(244, 244, 244, 0.9);
+  mix-blend-mode: normal;
+  box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.08), 0px 2px 4px rgba(187, 187, 187, 0.2);
+  border-radius: 28px;
+  padding:32px;
+  &__header{
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    &_name{
+      font-style: normal;
+      font-weight: 500;
+      font-size: 30px;
+      color: #1C1C1E;
+    }
+    &_info{
+      font-style: normal;
+      font-weight: 500;
+      font-size: 16px;
+      color: #000000;
+    }
+  }
+  &__rate{
+    display:flex;
+    justify-content: space-between;
+    &_subHeader{
+      font-style: normal;
+      margin-top:24px;
+      font-weight: 500;
+      font-size: 20px;
+      color: #000000
+    }
+    &_more{
+      font-style: normal;
+      font-weight: 700;
+      font-size: 20px;
+      letter-spacing: 0.02em;
+      color: #FFFFFF;
+      margin-top:51px;
+    }
+    &_icon{
+      margin-top:79px;
+    }
+  }
+  &__rateBlock{
+    display:flex;
+    justify-content: start;
+    flex-wrap: wrap;
+    max-width: 410px;
+    margin-top:32px;
+    &_item{
+      display: flex;
+      margin-left: 32px;
+      p{
+        font-style: normal;
+        font-weight: 700;
+        font-size: 20px;
+        letter-spacing: 0.02em;
+        color: #808080;
+        margin-right: 20px;
+      }
+      div{
+        font-style: normal;
+        font-weight: 700;
+        font-size: 20px;
+        letter-spacing: 0.02em;
+        color: #000000;
+      }
+    }
+    &_item:first-child{
+      margin:0;
+    }
+    &_item:nth-child(4){
+      margin:0;
+    }
+  }
+}
+.world-section{
+  text-align: center;
+  margin-top:48px;
+  h2{
+    font-style: normal;
+    font-weight: 500;
+    font-size: 30px;
+    color: #1C1C1C;
+    margin-bottom: 8px;
+  }
+  p{
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    color: #1C1C1E;
+    margin-bottom: 48px;
+  }
+}
+@media only screen and (max-width: 750px) and (min-width: 600px) {
+  .exchange-section{
+    &__header{
+      display:block;
+    }
+  }
+}
+@media only screen and (max-width: 600px){
+  .exchange-section{
+    &__header{
+      display:block;
+      text-align: center;
+    }
+    &__rate{
+      justify-content: space-evenly;
+    }
+    &__rateBlock{
+      flex-direction: column;
+      margin:0;
+      &_item{
+        margin:0;
+      }
+    }
+  }
+}

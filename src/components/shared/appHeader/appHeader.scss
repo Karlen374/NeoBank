@@ -1,0 +1,86 @@
+.header{
+  padding: 7px 0;
+  &__wrapper{
+    display: flex;
+    justify-content: space-between;
+    align-items:center;
+  }
+  &__name{
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+    letter-spacing: 0.02em;
+    color: #B4387A;
+  }
+  &__nav{
+    a:first-child{
+      margin:0;
+    }
+    &_item{
+      font-style: normal;
+      font-weight: 700;
+      font-size: 16px;
+      letter-spacing: 0.02em;
+      font-feature-settings: 'salt' on, 'liga' off;
+      color: #1D1929;
+      margin-left:40px;
+      &:hover{
+        color: #B2A35F;
+      }
+    }
+    &_active{
+      font-style: normal;
+      font-weight: 700;
+      font-size: 16px;
+      letter-spacing: 0.02em;
+      font-feature-settings: 'salt' on, 'liga' off;
+      color: #B2A35F;
+    }
+  }
+}
+
+@media only screen and (max-width: 700px) and (min-width: 620px)  {
+  .header{
+    &__nav{
+      &_item{
+        margin-left:20px;
+      }
+    }
+  }
+}
+@media only screen and (max-width: 620px) and (min-width: 400px)  {
+  .header{
+    &__wrapper{
+      display: flex;
+      justify-content: space-between;
+      align-items:center;
+      flex-direction: column;
+      grid-gap:5px;
+    }
+    &__nav{
+      &_item{
+        margin-left:20px;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  .header{
+    &__wrapper{
+      display: flex;
+      justify-content: space-between;
+      align-items:center;
+      flex-direction: column;
+      grid-gap:5px;
+    }
+    &__nav{
+      display:flex;
+      flex-direction: column;
+      text-align: center;
+      &_item{
+        margin-left:0px;
+      }
+    }
+  }
+}
