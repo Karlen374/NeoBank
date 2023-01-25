@@ -1,6 +1,6 @@
 export interface ICardCustomizeForm {
   amount: number,
-  term: 6 | 12 | 18 |24,
+  term: string,
   firstName: string,
   lastName: string,
   middleName: string | null,

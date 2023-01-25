@@ -1,0 +1,331 @@
+.scoringForm{
+  padding:32px;
+  background: #FFFFFF;
+  box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.08), 0px 2px 4px rgba(0, 0, 0, 0.2);
+  border-radius: 28px;
+  &__button{
+    display:flex;
+    justify-content: end;
+    margin-top: 20px;
+    button{
+      padding:16px 38px 14px;
+      border-radius: 8px;
+    }
+  }
+  &__header{
+    display:flex;
+    align-items: center;
+    margin-bottom: 25px;
+    h2{
+      font-weight: 700;
+      font-size: 30px;
+      color: #000000;
+    }
+    p{
+      font-weight: 500;
+      color: #000000;
+      margin-left: 80px;
+    }
+  }
+  h3{
+    font-weight: 700;
+    font-size: 20px;
+    margin:32px 0 16px;
+  }
+}
+@media only screen and (max-width: 800px) {
+  .scoringForm{
+    &__header{
+      h2{
+        font-size: 21px;
+      }
+      p{
+        font-weight: 500;
+        color: #000000;
+        margin-left: 40px;
+      }
+    }
+  }
+}
+.scoring-dataForm{
+  &__data{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+  &__select{
+    display:flex;
+    flex-direction: column;
+    margin-top:16px;
+    &_necessary{
+      font-weight: 500;
+      font-size: 16px;
+      color: #1A202C;
+      margin-bottom: 8px;
+      &::after{
+        content:'*';
+        color: #FF0000;
+        margin-left: 5px;
+      }
+    }
+    &_default{
+      background: #F9F5E3;
+      border: 1px solid rgba(128, 128, 128, 0.2);
+      border-radius: 6px;
+      width: 401.33px;
+      font-size: 14px;
+      padding:13px 0 13px 16px;
+      option:first-child{
+        display:none;
+      }
+    }
+
+    &_errorMessage{
+      font-weight: 500;
+      color: #FF5631;
+    }
+  }
+  &__input{
+    display:flex;
+    flex-direction: column;
+    margin-top:16px;
+    div{
+      width: 608px;
+      display:flex;
+      input:focus{
+        border-color: #5B35D5;
+      }
+      input{
+        background: #F9F5E3;
+        border: 1px solid rgba(128, 128, 128, 0.2);
+        border-radius: 6px;
+        font-weight: 400;
+        font-size: 14px;
+        padding:13px 16px;
+        color: #808080;
+        width:608px;
+      }
+      input[type=date]::-webkit-calendar-picker-indicator {
+        align-items: left;
+      }
+      svg{
+        position: relative;
+        right: 25px;
+      }
+    }
+    &_necessary{
+      font-weight: 500;
+      font-size: 16px;
+      color: #1A202C;
+      margin-bottom: 8px;
+      &::after{
+        content:'*';
+        color: #FF0000;
+        margin-left: 5px;
+      }
+    }
+    &_default{
+      background: #F9F5E3;
+      border: 1px solid rgba(128, 128, 128, 0.2);
+      border-radius: 6px;
+      font-weight: 400;
+      font-size: 14px;
+      padding:13px 16px;
+      color: #808080;
+      width:608px;
+    }
+    &_errorMessage{
+      font-weight: 500;
+      color: #FF5631;
+    }
+  }
+}
+
+@media only screen and (max-width: 1290px) and (min-width: 450px) {
+  .scoring-dataForm{
+    &__data{
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+    }
+    &__select{
+      display:flex;
+      flex-direction: column;
+      margin-top:16px;
+      &_default{
+        width: 401.33px;
+      }
+      &_error{
+        width: 401.33px;
+      }
+    }
+    &__input{
+      div{
+        width:401.33px;
+        input{
+          width:401.33px;
+        }
+      }
+    }
+  }
+}
+@media only screen and (max-width: 450px) {
+  .scoring-dataForm{
+    &__data{
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    &__select{
+      display:flex;
+      flex-direction: column;
+      margin-top:16px;
+      &_default{
+        width: 320px;
+      }
+      &_error{
+        width: 320px;
+      }
+    }
+    &__input{
+      div{
+        width:320px;
+        input{
+          width:320px;
+        }
+      }
+    }
+  }
+}
+.scoring-employmentForm{
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  &__select{
+    display:flex;
+    flex-direction: column;
+    margin-top:16px;
+    &_necessary{
+      font-weight: 500;
+      font-size: 16px;
+      color: #1A202C;
+      margin-bottom: 8px;
+      &::after{
+        content:'*';
+        color: #FF0000;
+        margin-left: 5px;
+      }
+    }
+    &_default{
+      background: #F9F5E3;
+      border: 1px solid rgba(128, 128, 128, 0.2);
+      border-radius: 6px;
+      width: 401.33px;
+      font-size: 14px;
+      padding:13px 0 13px 16px;
+      option:first-child{
+        display:none;
+      }
+    }
+    &_errorMessage{
+      font-weight: 500;
+      color: #FF5631;
+    }
+  }
+  &__input{
+    display:flex;
+    flex-direction: column;
+    margin-top:16px;
+    div{
+      width: 401.33px;
+      display:flex;
+      input:focus{
+        border-color: #5B35D5;
+      }
+      input{
+        background: #F9F5E3;
+        border: 1px solid rgba(128, 128, 128, 0.2);
+        border-radius: 6px;
+        font-weight: 400;
+        font-size: 14px;
+        padding:13px 16px;
+        color: #808080;
+        width:401.33px;
+      }
+      input[type=date]::-webkit-calendar-picker-indicator {
+        align-items: left;
+      }
+      svg{
+        position: relative;
+        right: 25px;
+      }
+    }
+    &_necessary{
+      font-weight: 500;
+      font-size: 16px;
+      color: #1A202C;
+      margin-bottom: 8px;
+      &::after{
+        content:'*';
+        color: #FF0000;
+        margin-left: 5px;
+      }
+    }
+    &_errorMessage{
+      font-weight: 500;
+      color: #FF5631;
+    }
+  }
+}
+@media only screen and (max-width: 1290px) and (min-width: 450px) {
+  .scoring-employmentForm{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+  }
+}
+@media only screen and (max-width: 450px) {
+  .scoring-employmentForm{
+    &__data{
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    &__select{
+      display:flex;
+      flex-direction: column;
+      margin-top:16px;
+      &_default{
+        width: 320px;
+      }
+      &_error{
+        width: 320px;
+      }
+    }
+    &__input{
+      div{
+        width:320px;
+        input{
+          width:320px;
+        }
+      }
+    }
+  }
+}
+
+.decision-app{
+  text-align: center;
+  padding:166px 0 238px;
+  h1{
+    font-weight: 700;
+    font-size: 30px;
+    letter-spacing: 0.02em;
+    color: #1C1C1E;
+    margin-bottom: 32px;
+  }
+  p{
+    font-weight: 500;
+    letter-spacing: 0.02em;
+    color: #4F5665;
+  }
+}

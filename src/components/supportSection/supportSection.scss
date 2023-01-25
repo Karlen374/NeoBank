@@ -38,6 +38,7 @@
     margin: 97px auto 0;
     &_email{
       position: relative;
+      display:flex;
       input{
       font-family: 'Nunito Sans';
       font-style: normal;
@@ -48,22 +49,31 @@
       border:none;
       outline: none;
       vertical-align: middle;
-      background: transparent url(../../public/icons/email.svg) no-repeat 0 center;
       width: 100%;
-      padding-left:37px
+      margin-left: 10px;
       }
     }
     &_submit{
-      input{
+      display:flex;
+      align-items: center;
+      justify-content: center;
       width: 161.48px;
       height: 44.92px;
       border-radius: 20px;
       font-style: normal;
-      font-weight: 700;
-      font-size: 16px;
-      color: #FFFFFF;
-      background: #686DF1 url(../../public/icons/send.svg) no-repeat 14px center;
+      input{
+        font-weight: 700;
+        font-size: 16px;
+        margin:0 11px;
+        &:hover{
+          cursor: pointer;
+        }
       }
+      svg{
+        margin-bottom: 5px;
+      }
+      color: #FFFFFF;
+      background-color: #686DF1;
     }
   }
 }
@@ -82,11 +92,13 @@
         }
       }
       &_submit{
+        justify-content: space-around;
         input{
-        width: 131.48px;
+        width: 101.48px;
         height: 40px;
         background-size: 16px;
         font-size:12px;
+        margin:0;
         }
       }
     }

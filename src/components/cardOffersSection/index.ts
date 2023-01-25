@@ -1,0 +1,1 @@
+export { CardOffersSection } from './cardOffersSection';

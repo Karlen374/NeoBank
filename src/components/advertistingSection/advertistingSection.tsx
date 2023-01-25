@@ -1,6 +1,7 @@
 import React from 'react';
 import './AdvertistingSection.scss';
 import CardImage from '../../public/assets/cardImage.png';
+import NavButton from './navButton';
 
 export const AdvertistingSection = () => {
   return (
@@ -26,7 +27,7 @@ export const AdvertistingSection = () => {
             <p className="advertisting-_subHeader">Card service is free</p>
           </div>
         </div>
-        <button type="button" className="button">Button Text</button>
+        <NavButton />
       </div>
       <div className="advertisting-section__img">
         <img src={CardImage} alt="card img" />

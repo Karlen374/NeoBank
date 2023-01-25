@@ -1,0 +1,1 @@
+export { transformScoringData } from './transformScoringData';
