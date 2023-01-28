@@ -7,7 +7,6 @@ export const DenyModal = () => {
   const openConfirmModal = () => {
     dispatch(changeModalStatus(false));
     dispatch(changeConfirmModalStatus(true));
-    localStorage.removeItem('offers');
   };
 
   return (

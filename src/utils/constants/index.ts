@@ -4,6 +4,7 @@ export { exchangeValuesMap } from './exchangeValuesMap';
 export { cardFeatures } from './cardFeatures';
 export {
   termOptions,
+  genderOptions,
   materialOptions,
   dependentOptions,
   employmentOptions,

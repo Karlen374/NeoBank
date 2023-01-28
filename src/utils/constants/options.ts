@@ -1,21 +1,36 @@
+enum genders{
+  emty = '',
+  Male = 'MALE',
+  Female = 'FEMALE',
+}
+interface IGenderOption{
+  value: genders;
+  text: string;
+}
+export const genderOptions:IGenderOption[] = [
+  { value: genders.emty, text: '' },
+  { value: genders.Male, text: 'Male' },
+  { value: genders.Female, text: 'Female' },
+];
+
 enum materials {
-  empty = ' ',
-  Married = 'Married',
-  Discovered = 'Discovered',
-  Single = 'Single',
-  Widow_Widower = 'Widow Widower',
+  empty = '',
+  Married = 'MARRIED',
+  Discovered = 'DISCOVERED',
+  Single = 'SINGLE',
+  Widow_Widower = 'WIDOW WIDOWER',
 }
 interface IMaterialOption{
-  value: string;
-  text: materials,
+  value: materials;
+  text: string,
 }
 
 export const materialOptions:IMaterialOption[] = [
-  { value: '', text: materials.empty },
-  { value: 'MARRIED', text: materials.Married },
-  { value: 'DIVORCED', text: materials.Discovered },
-  { value: 'SINGLE', text: materials.Single },
-  { value: 'WIDOW_WIDOWER', text: materials.Widow_Widower },
+  { value: materials.empty, text: ' ' },
+  { value: materials.Married, text: 'Married' },
+  { value: materials.Discovered, text: 'Discovered' },
+  { value: materials.Single, text: 'Single' },
+  { value: materials.Widow_Widower, text: 'Widow Widower' },
 ];
 
 enum dependents{
@@ -28,57 +43,57 @@ enum dependents{
   five = 5,
 }
 interface IDependentOption{
-  value: string | number;
-  text: dependents;
+  value: dependents;
+  text: string | number;
 }
 export const dependentOptions:IDependentOption[] = [
-  { value: '', text: dependents.empty },
-  { value: 0, text: dependents.zero },
-  { value: 1, text: dependents.one },
-  { value: 2, text: dependents.two },
-  { value: 3, text: dependents.three },
-  { value: 4, text: dependents.four },
-  { value: 5, text: dependents.five },
+  { value: dependents.empty, text: '' },
+  { value: dependents.zero, text: 0 },
+  { value: dependents.one, text: 1 },
+  { value: dependents.two, text: 2 },
+  { value: dependents.three, text: 3 },
+  { value: dependents.four, text: 4 },
+  { value: dependents.five, text: 5 },
 ];
 
 enum employments{
-  empty = ' ',
-  Unemployed = 'Unemployed',
-  Self_Employed = 'Self Employed',
-  Employed = 'Employed',
-  Bussiness_owner = 'Bussiness owner'
+  empty = '',
+  Unemployed = 'UNEMPLOYED',
+  Self_Employed = 'SELF EMPLOYED',
+  Employed = 'EMPLOYED',
+  Bussiness_owner = 'BUSSINESS OWNER'
 }
 
 interface IEmploymentOption{
-  value: string;
-  text: employments;
+  value: employments;
+  text: string;
 }
 
 export const employmentOptions:IEmploymentOption[] = [
-  { value: '', text: employments.empty },
-  { value: 'UNEMPLOYED', text: employments.Unemployed },
-  { value: 'SELF_EMPLOYED', text: employments.Self_Employed },
-  { value: 'EMPLOYED', text: employments.Employed },
-  { value: 'BUSINESS_OWNER', text: employments.Bussiness_owner },
+  { value: employments.empty, text: '' },
+  { value: employments.Unemployed, text: 'Unemployed' },
+  { value: employments.Self_Employed, text: 'Self Employed' },
+  { value: employments.Employed, text: 'Employed' },
+  { value: employments.Bussiness_owner, text: 'Bussiness_owner' },
 ];
 
 enum positions{
-  empty = ' ',
-  Worker = 'Worker',
-  Mid_Manager = 'Mid Manager',
-  Top_Manager = 'Top Manager',
-  Owner = 'Owner',
+  empty = '',
+  Worker = 'WORKER',
+  Mid_Manager = 'MID_MANAGER',
+  Top_Manager = 'TOP_MANAGER',
+  Owner = 'OWNER',
 }
 interface IPositionOption{
-  value: string;
-  text: positions;
+  value: positions;
+  text: string;
 }
 export const positionOptions:IPositionOption[] = [
-  { value: '', text: positions.empty },
-  { value: 'WORKER', text: positions.Worker },
-  { value: 'MID_MANAGER', text: positions.Mid_Manager },
-  { value: 'TOP_MANAGER', text: positions.Top_Manager },
-  { value: 'OWNER', text: positions.Owner },
+  { value: positions.empty, text: '' },
+  { value: positions.Worker, text: 'Worker' },
+  { value: positions.Mid_Manager, text: 'Mid Manager' },
+  { value: positions.Top_Manager, text: 'Top Manager' },
+  { value: positions.Owner, text: 'Owner' },
 ];
 
 export const termOptions = [

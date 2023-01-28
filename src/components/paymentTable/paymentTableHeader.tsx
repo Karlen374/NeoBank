@@ -13,7 +13,7 @@ const PaymentTableHeader = () => {
       <tr>
         {tableHeader.map((item) => {
           return (
-            <th>
+            <th key={item.name}>
               {item.name}
               <button onClick={() => dispatch(monthlyPaymentsIncSort(item.sort))} type="button">
                 ↑

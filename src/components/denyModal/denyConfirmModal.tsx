@@ -5,21 +5,25 @@ import './denyModal.scss';
 
 export const DenyConfirmModal = () => {
   const dispatch = useAppDispatch();
+  const closeDenyModal = () => {
+    dispatch(changeConfirmModalStatus(false));
+    localStorage.removeItem('offers');
+  };
   return (
     <div className="deny-modal">
       <div className="deny-modal__header">
         <h5>Deny application</h5>
-        <Link to="/">
+        <Link to="/" onClick={closeDenyModal}>
           <span
             className="deny-modal__header_close"
-            onClick={() => dispatch(changeConfirmModalStatus(false))}
+            // onClick={() => dispatch(changeConfirmModalStatus(false))}
           >
             &times;
           </span>
         </Link>
       </div>
       <p>Your application has been deny!</p>
-      <Link to="/" className="deny-modal__buttons">
+      <Link to="/" onClick={closeDenyModal} className="deny-modal__buttons">
         <button className="button" type="button">Go home</button>
       </Link>
     </div>

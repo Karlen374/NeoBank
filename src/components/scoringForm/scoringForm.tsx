@@ -6,6 +6,7 @@ import {
   dependentOptions,
   employmentOptions,
   positionOptions,
+  genderOptions,
 } from '@utils';
 import React from 'react';
 import { useForm } from 'react-hook-form';
@@ -45,9 +46,7 @@ export const ScoringForm = () => {
             name="gender"
             id="gender"
           >
-            <option value="">{' '}</option>
-            <option value="MALE">Male</option>
-            <option value="FEMALE">Female</option>
+            {genderOptions.map((item) => <option key={item.value} value={item.value}>{item.text}</option>)}
           </select>
           {errors.gender?.message && (
             <p className="customize-section__input_errorMessage">{errors.gender?.message}</p>
