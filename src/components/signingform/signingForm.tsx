@@ -1,4 +1,9 @@
-import { postSign, useAppDispatch, useAppSelector } from '@utils';
+import {
+  postSign,
+  signingFormText,
+  useAppDispatch,
+  useAppSelector,
+} from '@utils';
 import React, { useState } from 'react';
 import FileIcon from '../../public/icons/fileIcon';
 import Loader from '../shared/loader/loader';
@@ -28,13 +33,7 @@ export const SigningForm = ({ applicationId }:ISigningFormProps) => {
       </div>
       <div className="sign-documents__body">
         <p>
-          Information on interest rates under bank deposit agreements with individuals.
-          Center for Corporate Information Disclosure.
-          Information of a professional participant in the securities market.
-          Information about persons under whose control or significant influence the Partner Banks are.
-          By leaving an application, you agree to the processing of personal data, obtaining information,
-          obtaining access to a credit history, using an analogue of a handwritten signature, an offer,
-          a policy regarding the processing of personal data, a form of consent to the processing of personal data.
+          {signingFormText}
         </p>
       </div>
       <div className="sign-documents__file">

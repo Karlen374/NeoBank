@@ -5,6 +5,7 @@ import {
   useAppDispatch,
   postCardCustomizeData,
   useAppSelector,
+  termOptions,
 } from '@utils';
 import SuccessIcon from '../../public/icons/successIcon';
 import ErrorIcon from '../../public/icons/errorIcon';
@@ -119,10 +120,7 @@ export const CardCustomizeSection = () => {
                 name="term"
                 id="term"
               >
-                <option value="6">6 month</option>
-                <option value="12">12 month</option>
-                <option value="18">18 month</option>
-                <option value="24">24 month</option>
+                {termOptions.map((item) => <option key={item.value} value={item.value}>{item.text}</option>)}
               </select>
             </div>
 

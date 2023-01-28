@@ -1,6 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import { useAppSelector } from '@utils';
+import { useAppSelector, AppStatus } from '@utils';
 import TablePage from '../views/tablePage/tablePage';
 import ErrorPage from '../views/errorPage/errorPage';
 import LoanPage from '../views/loanPage/loanPage';
@@ -13,8 +13,8 @@ import AppHeader from './shared/appHeader/appHeader';
 
 const App = () => {
   const { status } = useAppSelector((store) => store.cardSlice);
-  const scoringPage = (status === 'CC_APPROVED' || status === 'APPROVED') ? <ScoringPage /> : <ErrorPage />;
-  const tablePage = (status === 'CC_APPROVED' || status === 'DOCUMENT_CREATED') ? <TablePage /> : <ErrorPage />;
+  const scoringPage = (status === AppStatus.CC_APPROVED || status === AppStatus.APPROVED) ? <ScoringPage /> : <ErrorPage />;
+  const tablePage = (status === AppStatus.CC_APPROVED || status === AppStatus.DOCUMENT_CREATED) ? <TablePage /> : <ErrorPage />;
   return (
     <Router>
       <AppHeader />

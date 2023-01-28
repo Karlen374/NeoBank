@@ -1,6 +1,7 @@
 import { useAppDispatch, useAppSelector, postCode } from '@utils';
 import React, { useEffect, useState } from 'react';
 import Loader from '../shared/loader/loader';
+import CodeItem from './codeItem';
 import './codeForm.scss';
 
 interface ICodeFormProps{
@@ -27,49 +28,21 @@ export const CodeForm = ({ applicationId }: ICodeFormProps) => {
     );
   }
   const fisrtInput = !firstValue
-    ? (
-      <div className="confirm-code__inputBlock_active">
-        <input type="number" onChange={(e) => setFirstValue(e.target.value)} value={firstValue} />
-      </div>
-    )
-    : (
-      <div className="confirm-code__inputBlock_passive">
-        <input type="number" onChange={() => setFirstValue('')} value={firstValue} />
-      </div>
-    );
+    ? <CodeItem value={firstValue} onChange={(e) => setFirstValue(e.target.value)} st="confirm-code__inputBlock_active" />
+    : <CodeItem value={firstValue} onChange={() => setFirstValue('')} st="confirm-code__inputBlock_passive" />;
+
   const secondInput = !secondValue
-    ? (
-      <div className="confirm-code__inputBlock_active">
-        <input type="number" onChange={(e) => setSecondValue(e.target.value)} value={secondValue} />
-      </div>
-    )
-    : (
-      <div className="confirm-code__inputBlock_passive">
-        <input type="number" onChange={() => setSecondValue('')} value={secondValue} />
-      </div>
-    );
+    ? <CodeItem value={secondValue} onChange={(e) => setSecondValue(e.target.value)} st="confirm-code__inputBlock_active" />
+    : <CodeItem value={secondValue} onChange={() => setSecondValue('')} st="confirm-code__inputBlock_passive" />;
+
   const thirdInput = !thirdValue
-    ? (
-      <div className="confirm-code__inputBlock_active">
-        <input type="number" onChange={(e) => setThirdValue(e.target.value)} value={thirdValue} />
-      </div>
-    )
-    : (
-      <div className="confirm-code__inputBlock_passive">
-        <input type="number" onChange={() => setThirdValue('')} value={thirdValue} />
-      </div>
-    );
+    ? <CodeItem value={thirdValue} onChange={(e) => setThirdValue(e.target.value)} st="confirm-code__inputBlock_active" />
+    : <CodeItem value={thirdValue} onChange={() => setThirdValue('')} st="confirm-code__inputBlock_passive" />;
+
   const fourthInput = !fourthValue
-    ? (
-      <div className="confirm-code__inputBlock_active">
-        <input type="number" onChange={(e) => setFourthValue(e.target.value)} value={fourthValue} />
-      </div>
-    )
-    : (
-      <div className="confirm-code__inputBlock_passive">
-        <input type="number" onChange={() => setFourthValue('')} value={fourthValue} />
-      </div>
-    );
+    ? <CodeItem value={fourthValue} onChange={(e) => setFourthValue(e.target.value)} st="confirm-code__inputBlock_active" />
+    : <CodeItem value={fourthValue} onChange={() => setFourthValue('')} st="confirm-code__inputBlock_passive" />;
+
   return (
     <div className="wrapper confirm-code">
       <h2>Please enter confirmation code</h2>

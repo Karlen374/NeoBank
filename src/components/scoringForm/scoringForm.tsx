@@ -1,4 +1,12 @@
-import { IScoringForm, useAppDispatch, postScoringData } from '@utils';
+import {
+  IScoringForm,
+  useAppDispatch,
+  postScoringData,
+  materialOptions,
+  dependentOptions,
+  employmentOptions,
+  positionOptions,
+} from '@utils';
 import React from 'react';
 import { useForm } from 'react-hook-form';
 import { useParams } from 'react-router-dom';
@@ -55,11 +63,7 @@ export const ScoringForm = () => {
               required: 'Select one of the options',
             })}
           >
-            <option value="">{' '}</option>
-            <option value="MARRIED">Married</option>
-            <option value="DIVORCED">Divorced</option>
-            <option value="SINGLE">Single</option>
-            <option value="WIDOW_WIDOWER">Widow Widower</option>
+            {materialOptions.map((item) => <option key={item.text} value={item.value}>{item.text}</option>)}
           </select>
           {errors.maritalStatus?.message && (
             <p className="customize-section__input_errorMessage">{errors.maritalStatus?.message}</p>
@@ -75,12 +79,7 @@ export const ScoringForm = () => {
               required: 'Select one of the options',
             })}
           >
-            <option value="">{' '}</option>
-            <option value={0}>0</option>
-            <option value={1}>1</option>
-            <option value={2}>2</option>
-            <option value={3}>3</option>
-            <option value={4}>4</option>
+            {dependentOptions.map((item) => <option key={item.text} value={item.value}>{item.text}</option>)}
           </select>
           {errors.dependentAmount?.message && (
             <p className="customize-section__input_errorMessage">{errors.dependentAmount?.message}</p>
@@ -153,11 +152,7 @@ export const ScoringForm = () => {
               required: 'Select one of the options',
             })}
           >
-            <option value="">{' '}</option>
-            <option value="UNEMPLOYED">Unemployed</option>
-            <option value="SELF_EMPLOYED">Self Employed</option>
-            <option value="EMPLOYED">Employed</option>
-            <option value="BUSINESS_OWNER">Bussiness owner</option>
+            {employmentOptions.map((item) => <option key={item.text} value={item.value}>{item.text}</option>)}
           </select>
           {errors.employmentStatus?.message && (
             <p className="customize-section__input_errorMessage">{errors.employmentStatus?.message}</p>
@@ -228,11 +223,7 @@ export const ScoringForm = () => {
               required: 'Select one of the options',
             })}
           >
-            <option value="">{' '}</option>
-            <option value="WORKER">Worker</option>
-            <option value="MID_MANAGER">Mid Manager</option>
-            <option value="TOP_MANAGER">Top Manager</option>
-            <option value="OWNER">Owner</option>
+            {positionOptions.map((item) => <option key={item.text} value={item.value}>{item.text}</option>)}
           </select>
           {errors.position?.message && (
             <p className="customize-section__input_errorMessage">{errors.position?.message}</p>

@@ -5,14 +5,10 @@ interface IPaymentItemProps{
   data: IPayment;
 }
 const PaymentItem = ({ data }:IPaymentItemProps) => {
+  console.log(data);
   return (
     <tr>
-      <td>{data.number}</td>
-      <td>{data.date}</td>
-      <td>{data.totalPayment}</td>
-      <td>{data.interestPayment}</td>
-      <td>{data.debtPayment}</td>
-      <td>{data.remainingDebt}</td>
+      {Object.values(data).map((item, id) => <td key={id}>{item}</td>)}
     </tr>
   );
 };

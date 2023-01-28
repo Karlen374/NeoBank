@@ -5,6 +5,9 @@ import {
   ICardCustomizeForm,
   IScoringForm,
   IPayment,
+  AppStatus,
+  ISortValue,
+  checkSortValue,
 } from '@utils';
 
 interface CardSliceState {
@@ -13,8 +16,7 @@ interface CardSliceState {
   confirmModal: boolean;
   selectedOffer: boolean;
   codeErrorStatus: boolean;
-  status:
-  'PREAPPROVAL' | 'CLIENT_DENIED' | 'APPROVED' | 'CC_DENIED' | 'CC_APPROVED' | 'PREPARE_DOCUMENTS' | 'DOCUMENT_CREATED' | 'CREDIT_ISSUED';
+  status: AppStatus;
   monthlyPayments: IPayment[];
 }
 
@@ -108,26 +110,14 @@ const CardSlice = createSlice({
       state.confirmModal = action.payload;
     },
     monthlyPaymentsDescSort: (state, action) => {
-      const sortValue: 'number' | 'totalPayment' | 'debtPayment' | 'interestPayment' | 'remainingDebt' | 'date' = action.payload;
-      if (
-        sortValue === 'number'
-        || sortValue === 'totalPayment'
-        || sortValue === 'debtPayment'
-        || sortValue === 'interestPayment'
-        || sortValue === 'remainingDebt'
-      ) {
+      const sortValue: ISortValue = action.payload;
+      if (checkSortValue(sortValue)) {
         state.monthlyPayments = state.monthlyPayments.sort((a, b) => Number(a[sortValue]) - Number(b[sortValue]));
       } else state.monthlyPayments = state.monthlyPayments.sort((a, b) => a.date.localeCompare(b.date));
     },
     monthlyPaymentsIncSort: (state, action) => {
-      const sortValue: 'number' | 'totalPayment' | 'debtPayment' | 'interestPayment' | 'remainingDebt' | 'date' = action.payload;
-      if (
-        sortValue === 'number'
-        || sortValue === 'totalPayment'
-        || sortValue === 'debtPayment'
-        || sortValue === 'interestPayment'
-        || sortValue === 'remainingDebt'
-      ) {
+      const sortValue: ISortValue = action.payload;
+      if (checkSortValue(sortValue)) {
         state.monthlyPayments = state.monthlyPayments.sort((a, b) => Number(b[sortValue]) - Number(a[sortValue]));
       } else state.monthlyPayments = state.monthlyPayments.sort((a, b) => a.date.localeCompare(b.date)).reverse();
     },
@@ -154,13 +144,13 @@ const CardSlice = createSlice({
       })
       .addCase(postScoringData.fulfilled, (state) => {
         state.loader = false;
-        state.status = 'CC_DENIED';
+        state.status = AppStatus.CC_DENIED;
       })
       .addCase(getStatus.pending, (state) => {
         state.loader = true;
       })
       .addCase(getStatus.fulfilled, (state, action) => {
-        if (action.payload.status !== 'PREAPPROVAL') state.selectedOffer = true;
+        if (action.payload.status !== AppStatus.PREAPPROVAL) state.selectedOffer = true;
         const monthlyPayments = action.payload.credit?.paymentSchedule;
         if (monthlyPayments) state.monthlyPayments = monthlyPayments;
         state.status = action.payload.status;
@@ -170,7 +160,7 @@ const CardSlice = createSlice({
         state.loader = true;
       })
       .addCase(postPermission.fulfilled, (state) => {
-        state.status = 'DOCUMENT_CREATED';
+        state.status = AppStatus.DOCUMENT_CREATED;
         state.loader = false;
       })
       .addCase(postSign.pending, (state) => {
@@ -190,7 +180,7 @@ const CardSlice = createSlice({
       })
       .addCase(postCode.fulfilled, (state) => {
         state.loader = false;
-        state.status = 'CREDIT_ISSUED';
+        state.status = AppStatus.CREDIT_ISSUED;
       });
   },
 });
