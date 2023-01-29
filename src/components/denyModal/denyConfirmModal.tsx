@@ -16,7 +16,6 @@ export const DenyConfirmModal = () => {
         <Link to="/" onClick={closeDenyModal}>
           <span
             className="deny-modal__header_close"
-            // onClick={() => dispatch(changeConfirmModalStatus(false))}
           >
             &times;
           </span>

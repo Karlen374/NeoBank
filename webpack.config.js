@@ -28,6 +28,18 @@ module.exports = {
     path: path.resolve(__dirname, 'dist'),
     publicPath: '/',
   },
+  optimization: {
+    splitChunks: {
+      cacheGroups: {
+        vendor: {
+          name: 'vendors',
+          chunks: 'all',
+          test: /node_modules/,
+          enforce: true,
+        },
+      },
+    },
+  },
   module: {
     rules: [
       {
@@ -39,12 +51,6 @@ module.exports = {
         test: /\.ts$/,
         exclude: '/node_modules/',
         use: ['ts-loader'],
-        // use: {
-        //   loader: 'babel-loader',
-        //   options: {
-        //     presets: ['@babel/preset-typescript'],
-        //   },
-        // },
       },
       {
         test: /\.tsx$/,
