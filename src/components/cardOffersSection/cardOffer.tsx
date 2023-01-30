@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { startTransition } from 'react';
 import './cardOffersSection.scss';
 import { IOffer, useAppDispatch, postSelectedOffer } from '@utils';
 import SuccesIcon from '../../public/icons/successIcon';
@@ -11,7 +11,9 @@ interface ICardOfferProps{
 export const CardOffer = ({ offer }: ICardOfferProps) => {
   const dispatch = useAppDispatch();
   const getSelectedOffer = () => {
-    dispatch(postSelectedOffer(offer));
+    startTransition(() => {
+      dispatch(postSelectedOffer(offer));
+    });
   };
 
   return (

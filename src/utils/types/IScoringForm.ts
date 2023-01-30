@@ -2,7 +2,7 @@ export interface IScoringForm{
   gender: 'MALE' | 'FAMALE',
   maritalStatus: 'MARRIED' | 'DIVORCED' | 'SINGLE' | 'WIDOW_WIDOWER',
   dependentAmount: number,
-  passportIssueDate: string,
+  passportIssueDate: string | Date,
   passportIssueBranch: string,
   employmentStatus: 'UNEMPLOYED' | 'SELF_EMPLOYED' | 'EMPLOYED' | 'BUSINESS_OWNER',
   employerINN: string,

@@ -25,7 +25,8 @@ export const ScoringForm = () => {
   const { applicationId } = useParams();
   const dispatch = useAppDispatch();
 
-  const handleSubmitForm = (data: IScoringForm) => {
+  const handleSubmitForm = (data: IScoringForm, e: React.SyntheticEvent) => {
+    e.preventDefault();
     dispatch(postScoringData({ data, applicationId }));
     reset();
   };
@@ -88,20 +89,16 @@ export const ScoringForm = () => {
           <label className="scoring-dataForm__input_necessary" htmlFor="passport">Date of issue of the passport</label>
           <div>
             <input
-              type="text"
+              className="customize-section__input_error"
+              type="date"
               name="passport"
               id="passport"
+              max={(new Date().toISOString().slice(0, 10))}
               placeholder="Select Date and Time"
               {...register('passportIssueDate', {
-                required: 'Incorrect date of passport issue date',
+                required: 'this field is required',
               })}
             />
-            {errors.passportIssueDate?.message && (
-            <ErrorIcon />
-            )}
-            {touchedFields.passportIssueDate && !errors.passportIssueDate?.message && (
-            <SuccessIcon />
-            )}
           </div>
           {errors.passportIssueDate?.message && (
             <p className="customize-section__input_errorMessage">{errors.passportIssueDate?.message}</p>

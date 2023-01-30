@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { startTransition, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import {
   ICardCustomizeForm,
@@ -28,9 +28,12 @@ export const CardCustomizeSection = () => {
   const handleChangeAmount = (amount: number) => {
     setAmount(amount);
   };
-  const handleSubmitForm = (data: ICardCustomizeForm) => {
-    dispatch(postCardCustomizeData({ ...data, amount }));
-    reset();
+  const handleSubmitForm = (data: ICardCustomizeForm, e: React.SyntheticEvent) => {
+    // e.preventDefault();
+    startTransition(() => {
+      dispatch(postCardCustomizeData({ ...data, amount }));
+      reset();
+    });
   };
 
   if (loader) {
