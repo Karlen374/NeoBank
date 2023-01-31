@@ -1,0 +1,129 @@
+.sign-documents{
+  padding:104px 0 97px;
+  &__header{
+    display:flex;
+    align-items: center;
+    margin-bottom: 25px;
+    h2{
+      font-weight: 700;
+      font-size: 30px;
+      color: #000000;
+    }
+    p{
+      font-weight: 500;
+      color: #000000;
+      margin-left: 80px;
+    }
+  }
+  &__body{
+    margin-bottom: 32px;
+    p{
+      font-weight: 500;
+      font-size: 20px;
+      color: #4F5665;
+    }
+  }
+  &__file{
+    display:flex;
+    align-items: center;
+    p{
+      font-weight: 500;
+      font-size: 20px;
+      color: #000000;
+    }
+  }
+  &__buttons{
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    &_disabled{
+      background-color: rgb(193, 192, 192);
+      color: #fff;
+      font-family: 'Ubuntu';
+      font-weight: 700;
+    }
+    input{
+      background: #FFFFFF;
+      border: 1px solid #808080;
+      border-radius: 2px;
+      width: 20px;
+      height: 20px;
+    }
+    label{
+      font-weight: 400;
+      font-size: 18px;
+      color: #1A202C;
+      margin:0 80px 0 14px;
+    }
+    button{
+      padding:11px 60.5px;
+      border-radius: 8px;
+    }
+  }
+}
+
+@media only screen and (max-width: 500px) and (min-width: 440px) {
+  .sign-documents{
+    &__header{
+      display:flex;
+      align-items: center;
+      margin-bottom: 25px;
+      h2{
+        font-weight: 700;
+        font-size: 30px;
+        color: #000000;
+      }
+      p{
+        font-weight: 500;
+        color: #000000;
+        margin-left: 20px;
+      }
+    }
+    &__body{
+      p{
+        text-align: center;
+      }
+    }
+  }
+}
+.sign-message{
+  text-align: center;
+  padding:166px 0 228px;
+  h1{
+    font-weight: 700;
+    font-size: 30px;
+    letter-spacing: 0.02em;
+    color: #1C1C1E;
+  }
+  p{
+    font-weight: 500;
+    letter-spacing: 0.02em;
+    color: #4F5665;
+    margin-top:21px;
+  }
+}
+@media only screen and (max-width: 440px) {
+  .sign-documents{
+    &__header{
+      display:flex;
+      flex-direction: column;
+      align-items: center;
+      margin-bottom: 25px;
+      h2{
+        font-weight: 700;
+        font-size: 30px;
+        color: #000000;
+      }
+      p{
+        font-weight: 500;
+        color: #000000;
+        margin-left: 20px;
+      }
+    }
+    &__body{
+      p{
+        text-align: center;
+      }
+    }
+  }
+}

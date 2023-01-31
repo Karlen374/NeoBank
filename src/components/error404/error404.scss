@@ -1,0 +1,23 @@
+.not-found{
+  display:flex;
+  justify-content: space-between;
+  align-items: center;
+  padding:24px 0 96px;
+  &__message{
+    h1{
+      font-weight: 700;
+      font-size: 30px;
+      color: #1C1C1E;
+      margin-bottom: 32px;
+    }
+    p{
+      font-weight: 500;
+      color: #4B4B4B;
+      margin-bottom: 32px;
+    }
+    button{
+      padding:11px 64.5px;
+      border-radius: 8px;
+    }
+  }
+}

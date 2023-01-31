@@ -1,6 +1,12 @@
-import React, { useState } from 'react';
+import React, { startTransition, useState } from 'react';
 import { useForm } from 'react-hook-form';
-import { ICardCustomizeForm, useApplicationServices } from '@utils';
+import {
+  ICardCustomizeForm,
+  useAppDispatch,
+  postCardCustomizeData,
+  useAppSelector,
+  termOptions,
+} from '@utils';
 import SuccessIcon from '../../public/icons/successIcon';
 import ErrorIcon from '../../public/icons/errorIcon';
 import './cardCustomizeSection.scss';
@@ -9,8 +15,9 @@ import Loader from '../shared/loader/loader';
 
 export const CardCustomizeSection = () => {
   const [amount, setAmount] = useState(15000);
-  const [loader, setLoader] = useState(false);
-  const { postFormData } = useApplicationServices();
+  const { loader } = useAppSelector((store) => store.cardSlice);
+  const dispatch = useAppDispatch();
+
   const {
     register,
     formState: { errors, touchedFields },
@@ -21,12 +28,11 @@ export const CardCustomizeSection = () => {
   const handleChangeAmount = (amount: number) => {
     setAmount(amount);
   };
-  const customizeCard = async (data: ICardCustomizeForm) => {
-    setLoader(true);
-    setAmount(15000);
-    const res = await postFormData({ ...data, amount });
-    if (res) setLoader(false);
-    reset();
+  const handleSubmitForm = (data: ICardCustomizeForm) => {
+    startTransition(() => {
+      dispatch(postCardCustomizeData({ ...data, amount }));
+      reset();
+    });
   };
 
   if (loader) {
@@ -37,7 +43,7 @@ export const CardCustomizeSection = () => {
       <div className="customize-section__block">
         <CustomizeSectionHeader onChange={handleChangeAmount} amount={amount} />
         <h3 className="customize-section__contact">Contact Information</h3>
-        <form onSubmit={handleSubmit(customizeCard)}>
+        <form onSubmit={handleSubmit(handleSubmitForm)}>
           <div className="customize-section__information">
             <div className="customize-section__input">
               <label className="customize-section__input_necessary" htmlFor="lastName">Your last name</label>
@@ -107,12 +113,16 @@ export const CardCustomizeSection = () => {
               </div>
             </div>
             <div className="customize-section__input">
-              <label className="customize-section__input_necessary" htmlFor="select">Select term</label>
-              <select className="customize-section__input_default" defaultValue={6} {...register('term')} name="select" id="select">
-                <option value={6}>6 month</option>
-                <option value={12}>12 month</option>
-                <option value={18}>18 month</option>
-                <option value={24}>24 month</option>
+              <label className="customize-section__input_necessary" htmlFor="term">Select term</label>
+              <select
+                className="customize-section__input_default"
+                {...register('term', {
+                  required: 'Select one of the options',
+                })}
+                name="term"
+                id="term"
+              >
+                {termOptions.map((item) => <option key={item.value} value={item.value}>{item.text}</option>)}
               </select>
             </div>
 
@@ -157,12 +167,6 @@ export const CardCustomizeSection = () => {
                     required: 'this field is required',
                   })}
                 />
-                {errors.birthdate?.message && (
-                <ErrorIcon />
-                )}
-                {touchedFields.birthdate && !errors.birthdate?.message && (
-                <SuccessIcon />
-                )}
               </div>
               {errors.birthdate?.message && (
                 <p className="customize-section__input_errorMessage">{errors.birthdate?.message}</p>

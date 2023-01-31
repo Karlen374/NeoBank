@@ -26,24 +26,19 @@ module.exports = {
   output: {
     filename: '[name].[hash].js',
     path: path.resolve(__dirname, 'dist'),
+    publicPath: '/',
   },
   module: {
     rules: [
       {
         test: /\.js$/,
-        enforce: 'pre',
+        exclude: '/node_modules/',
         use: ['source-map-loader'],
       },
       {
         test: /\.ts$/,
         exclude: '/node_modules/',
         use: ['ts-loader'],
-        // use: {
-        //   loader: 'babel-loader',
-        //   options: {
-        //     presets: ['@babel/preset-typescript'],
-        //   },
-        // },
       },
       {
         test: /\.tsx$/,
