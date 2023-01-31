@@ -28,23 +28,11 @@ module.exports = {
     path: path.resolve(__dirname, 'dist'),
     publicPath: '/',
   },
-  optimization: {
-    splitChunks: {
-      cacheGroups: {
-        vendor: {
-          name: 'vendors',
-          chunks: 'all',
-          test: /node_modules/,
-          enforce: true,
-        },
-      },
-    },
-  },
   module: {
     rules: [
       {
         test: /\.js$/,
-        enforce: 'pre',
+        exclude: '/node_modules/',
         use: ['source-map-loader'],
       },
       {

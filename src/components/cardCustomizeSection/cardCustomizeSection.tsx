@@ -28,8 +28,7 @@ export const CardCustomizeSection = () => {
   const handleChangeAmount = (amount: number) => {
     setAmount(amount);
   };
-  const handleSubmitForm = (data: ICardCustomizeForm, e: React.SyntheticEvent) => {
-    // e.preventDefault();
+  const handleSubmitForm = (data: ICardCustomizeForm) => {
     startTransition(() => {
       dispatch(postCardCustomizeData({ ...data, amount }));
       reset();
@@ -168,12 +167,6 @@ export const CardCustomizeSection = () => {
                     required: 'this field is required',
                   })}
                 />
-                {errors.birthdate?.message && (
-                <ErrorIcon />
-                )}
-                {touchedFields.birthdate && !errors.birthdate?.message && (
-                <SuccessIcon />
-                )}
               </div>
               {errors.birthdate?.message && (
                 <p className="customize-section__input_errorMessage">{errors.birthdate?.message}</p>
