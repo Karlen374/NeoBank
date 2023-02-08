@@ -8,12 +8,22 @@ interface IExchangeItem{
 const ExchangeItem = ({ value }:IExchangeItem) => {
   const { getExchangeValue } = useExchangeServices();
   const [rate, setRate] = useState<number | null>(null);
+
   const getCurrentExchangeRate = async () => {
     const res = await getExchangeValue(value, 'RUB');
     setRate(res);
   };
   useEffect(() => {
     getCurrentExchangeRate();
+  }, []);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      getCurrentExchangeRate();
+    }, 600000);
+    return () => {
+      clearInterval(timer);
+    };
   }, []);
 
   return (

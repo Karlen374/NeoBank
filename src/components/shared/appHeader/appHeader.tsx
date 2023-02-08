@@ -6,11 +6,16 @@ const AppHeader = () => {
   return (
     <header className="header">
       <nav className="wrapper header__wrapper">
-        <NavLink end to="/" className="header__name">
+        <NavLink data-testid="main-page" end to="/" className="header__name">
           Neobank
         </NavLink>
         <div className="header__nav">
-          <NavLink style={({ isActive }) => ({ color: isActive ? '#B2A35F' : 'inherit' })} to="/loan" className="header__nav_item">
+          <NavLink
+            data-testid="loan-page"
+            style={({ isActive }) => ({ color: isActive ? '#B2A35F' : 'inherit' })}
+            to="/loan"
+            className="header__nav_item"
+          >
             Credit Card
           </NavLink>
           <NavLink className="header__nav_item" to="#">Product</NavLink>

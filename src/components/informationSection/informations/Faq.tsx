@@ -15,7 +15,7 @@ const Faq = () => {
   };
 
   return (
-    <div className="wrapper information-section__faq">
+    <div data-testid="faq-section" className="wrapper information-section__faq">
       <h2>Issuing and receiving a card</h2>
       <div className="information-section__questions">
         {

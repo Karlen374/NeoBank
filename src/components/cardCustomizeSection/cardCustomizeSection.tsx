@@ -39,7 +39,7 @@ export const CardCustomizeSection = () => {
     return <Loader />;
   }
   return (
-    <section className="customize-section wrapper">
+    <section id="customize-form" className="customize-section wrapper">
       <div className="customize-section__block">
         <CustomizeSectionHeader onChange={handleChangeAmount} amount={amount} />
         <h3 className="customize-section__contact">Contact Information</h3>

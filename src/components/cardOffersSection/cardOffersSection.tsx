@@ -25,7 +25,7 @@ export const CardOffersSection = ({ offers }:ICardOffersSectionProps) => {
     );
   }
   return (
-    <section className="offers-section wrapper">
+    <section id="customize-form" className="offers-section wrapper">
       <div className="offers-section__offers">
         {offers.map((offer) => <CardOffer key={offer.monthlyPayment} offer={offer} />)}
       </div>

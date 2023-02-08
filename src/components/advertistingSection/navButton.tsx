@@ -7,7 +7,7 @@ const NavButton = () => {
   const offers = JSON.parse(localStorage.getItem('offers'));
   const navLink = offers ? getNavLink(offers[0].applicationId, status) : null;
 
-  let navButton = <button type="button" className="button">Button Text</button>;
+  let navButton = <a href="#customize-form" type="button" className="button">Button Text</a>;
 
   if (navLink) {
     navButton = (

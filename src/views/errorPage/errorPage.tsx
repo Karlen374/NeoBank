@@ -10,7 +10,9 @@ const ErrorPage = () => {
   const { applicationId } = useParams();
 
   useEffect(() => {
-    if (Number(applicationId) === JSON.parse(localStorage.getItem('offers'))[0].applicationId) {
+    const offers = JSON.parse(localStorage.getItem('offers'));
+    const id = offers ? offers[0].applicationId : null;
+    if (id && Number(applicationId) === id) {
       dispatch(getStatus(applicationId));
     }
   }, []);

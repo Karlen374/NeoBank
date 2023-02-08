@@ -5,7 +5,7 @@ const { SourceMapDevToolPlugin } = require('webpack');
 
 module.exports = {
   mode: 'development',
-  entry: ['@babel/polyfill', './src/index.tsx'],
+  entry: './src/index.tsx',
   plugins: [
     new HTMLWebpackPlugin({
       template: './src/index.html',
@@ -31,23 +31,10 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.js$/,
-        exclude: '/node_modules/',
-        use: ['source-map-loader'],
-      },
-      {
-        test: /\.ts$/,
-        exclude: '/node_modules/',
-        use: ['ts-loader'],
-      },
-      {
-        test: /\.tsx$/,
-        exclude: '/node_modules/',
+        test: /\.(ts|js)x?$/,
+        exclude: /node_modules/,
         use: {
           loader: 'babel-loader',
-          options: {
-            presets: ['@babel/preset-react', '@babel/preset-typescript'],
-          },
         },
       },
       {

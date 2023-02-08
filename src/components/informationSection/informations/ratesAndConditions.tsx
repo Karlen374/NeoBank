@@ -3,7 +3,7 @@ import '../informationSection.scss';
 
 const RatesAndConditions = () => {
   return (
-    <div className="information-section__rates">
+    <div data-testid="rates-section" className="information-section__rates">
       <div className="information-section__rate">
         <p className="information-section__rate_header">Card currency</p>
         <p className="information-section__rate_info">Rubles, dollars, euro</p>

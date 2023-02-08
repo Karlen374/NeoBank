@@ -12,7 +12,7 @@ export const Error404 = () => {
   return (
     <div className="not-found wrapper">
       <div className="not-found__message">
-        <h1>Oops....</h1>
+        <h1 data-testid="error-page">Oops....</h1>
         <h1>Page not found</h1>
         <p>This Page doesn`t exist or was removed! We suggest you go back.</p>
         <button type="button" className="button" onClick={goBack}>Go back</button>
