@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { SigningForm, SigningText } from '@components';
 import { useParams } from 'react-router-dom';
 import { useAppSelector } from '@utils';
-import ErrorPage from '../errorPage/errorPage';
+import ErrorChakingLayout from '../../layouts/errorChakingLayout';
 
 const SignPage = () => {
   const { applicationId } = useParams();
@@ -20,16 +20,12 @@ const SignPage = () => {
     return () => {
       clearInterval(timer);
     };
-  }, []);
+  }, [sign]);
 
-  if ((JSON.parse(localStorage.getItem('offers')))[0].applicationId !== Number(applicationId)) {
-    return (
-      <ErrorPage />
-    );
-  }
+  const content = sign ? <SigningText /> : <SigningForm applicationId={applicationId} />;
   return (
     <main>
-      {sign ? <SigningText /> : <SigningForm applicationId={applicationId} />}
+      <ErrorChakingLayout component={content} />
     </main>
   );
 };

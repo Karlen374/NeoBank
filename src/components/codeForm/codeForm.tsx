@@ -27,6 +27,7 @@ export const CodeForm = ({ applicationId }: ICodeFormProps) => {
       <Loader />
     );
   }
+
   const fisrtInput = !firstValue
     ? <CodeItem value={firstValue} onChange={(e) => setFirstValue(e.target.value)} st="confirm-code__inputBlock_active" />
     : <CodeItem value={firstValue} onChange={() => setFirstValue('')} st="confirm-code__inputBlock_passive" />;

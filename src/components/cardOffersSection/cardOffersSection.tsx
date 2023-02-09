@@ -9,6 +9,7 @@ interface ICardOffersSectionProps{
 }
 export const CardOffersSection = ({ offers }:ICardOffersSectionProps) => {
   const { selectedOffer, loader } = useAppSelector((store) => store.cardSlice);
+
   if (loader) {
     return (
       <Loader />

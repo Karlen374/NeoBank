@@ -30,4 +30,4 @@ const PaymentButtons = ({ applicationId }: IPaymentButtonProps) => {
     </div>
   );
 };
-export default PaymentButtons;
+export default React.memo(PaymentButtons);

@@ -25,9 +25,10 @@ export const CardCustomizeSection = () => {
     reset,
   } = useForm<ICardCustomizeForm>({ mode: 'onBlur' });
 
-  const handleChangeAmount = (amount: number) => {
+  const handleChangeAmount = React.useCallback((amount: number) => {
     setAmount(amount);
-  };
+  }, [amount]);
+
   const handleSubmitForm = (data: ICardCustomizeForm) => {
     startTransition(() => {
       dispatch(postCardCustomizeData({ ...data, amount }));

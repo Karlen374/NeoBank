@@ -27,4 +27,4 @@ const AppHeader = () => {
     </header>
   );
 };
-export default AppHeader;
+export default React.memo(AppHeader);

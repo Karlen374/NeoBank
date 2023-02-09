@@ -1,7 +1,7 @@
 import React from 'react';
 import './cardCreatInformation.scss';
 
-export const CardCreateInformation = () => {
+export const CardCreateInformation = React.memo(() => {
   return (
     <div className="card-creat wrapper">
       <h1>How to get a card</h1>
@@ -28,4 +28,4 @@ export const CardCreateInformation = () => {
       </div>
     </div>
   );
-};
+});

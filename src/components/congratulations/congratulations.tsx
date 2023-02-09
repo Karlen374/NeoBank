@@ -8,6 +8,7 @@ export const Congratulations = () => {
     localStorage.removeItem('offers');
     localStorage.removeItem('sign');
   };
+
   return (
     <div className="wrapper step-congratulations">
       <img src={surpriseBox} alt="suprise" />
