@@ -26,12 +26,13 @@ const TablePage = () => {
     );
   }
 
-  if ((JSON.parse(localStorage.getItem('offers')))[0].applicationId !== Number(applicationId)) {
+  const offers = JSON.parse(localStorage.getItem('offers'));
+  const id = offers ? offers[0].applicationId : null;
+  if ((id && id !== Number(applicationId)) || !id) {
     return (
       <ErrorPage />
     );
   }
-
   return (
     <main>
       <Modal active={modal}>

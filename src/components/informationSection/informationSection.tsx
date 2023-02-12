@@ -6,7 +6,7 @@ import Faq from './informations/faq';
 import RatesAndConditions from './informations/ratesAndConditions';
 import './informationSection.scss';
 
-export const InformationSection = () => {
+export const InformationSection = React.memo(() => {
   const [informationNavId, setinformationNavId] = useState<0 | 1 | 2| 3>(0);
 
   return (
@@ -27,4 +27,4 @@ export const InformationSection = () => {
       {informationNavId === 3 && <Faq />}
     </section>
   );
-};
+});

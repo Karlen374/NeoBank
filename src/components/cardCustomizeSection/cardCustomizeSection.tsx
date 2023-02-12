@@ -25,9 +25,10 @@ export const CardCustomizeSection = () => {
     reset,
   } = useForm<ICardCustomizeForm>({ mode: 'onBlur' });
 
-  const handleChangeAmount = (amount: number) => {
+  const handleChangeAmount = React.useCallback((amount: number) => {
     setAmount(amount);
-  };
+  }, [amount]);
+
   const handleSubmitForm = (data: ICardCustomizeForm) => {
     startTransition(() => {
       dispatch(postCardCustomizeData({ ...data, amount }));
@@ -39,7 +40,7 @@ export const CardCustomizeSection = () => {
     return <Loader />;
   }
   return (
-    <section className="customize-section wrapper">
+    <section id="customize-form" className="customize-section wrapper">
       <div className="customize-section__block">
         <CustomizeSectionHeader onChange={handleChangeAmount} amount={amount} />
         <h3 className="customize-section__contact">Contact Information</h3>

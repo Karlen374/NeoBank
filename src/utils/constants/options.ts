@@ -59,9 +59,9 @@ export const dependentOptions:IDependentOption[] = [
 enum employments{
   empty = '',
   Unemployed = 'UNEMPLOYED',
-  Self_Employed = 'SELF EMPLOYED',
+  Self_Employed = 'SELF_EMPLOYED',
   Employed = 'EMPLOYED',
-  Bussiness_owner = 'BUSSINESS OWNER'
+  Bussiness_owner = 'BUSSINESS_OWNER'
 }
 
 interface IEmploymentOption{
@@ -74,7 +74,7 @@ export const employmentOptions:IEmploymentOption[] = [
   { value: employments.Unemployed, text: 'Unemployed' },
   { value: employments.Self_Employed, text: 'Self Employed' },
   { value: employments.Employed, text: 'Employed' },
-  { value: employments.Bussiness_owner, text: 'Bussiness_owner' },
+  { value: employments.Bussiness_owner, text: 'Bussiness owner' },
 ];
 
 enum positions{

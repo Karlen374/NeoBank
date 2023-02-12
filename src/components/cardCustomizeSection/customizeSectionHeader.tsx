@@ -34,4 +34,4 @@ const CustomizeSectionHeader = ({ onChange, amount }: ICustomizeSectionHeader) =
     </div>
   );
 };
-export default CustomizeSectionHeader;
+export default React.memo(CustomizeSectionHeader);

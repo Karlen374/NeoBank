@@ -1,21 +1,16 @@
 import React from 'react';
 import { ScoringForm, ScoringText } from '@components';
 import { useAppSelector, AppStatus } from '@utils';
-import { useParams } from 'react-router-dom';
-import ErrorPage from '../errorPage/errorPage';
+import ErrorChakingLayout from '../../layouts/errorChakingLayout';
 
 const ScoringPage = () => {
   const { status } = useAppSelector((store) => store.cardSlice);
-  const { applicationId } = useParams();
 
-  if ((JSON.parse(localStorage.getItem('offers')))[0].applicationId !== Number(applicationId)) {
-    return (
-      <ErrorPage />
-    );
-  }
+  const content = status === AppStatus.CC_DENIED || status === AppStatus.CC_APPROVED ? <ScoringText /> : <ScoringForm />;
+
   return (
     <main style={{ padding: '24px 0 96px' }}>
-      {status === AppStatus.CC_DENIED || status === AppStatus.CC_APPROVED ? <ScoringText /> : <ScoringForm />}
+      <ErrorChakingLayout component={content} />
     </main>
   );
 };

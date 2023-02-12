@@ -16,6 +16,7 @@ export const SigningForm = ({ applicationId }:ISigningFormProps) => {
   const [agree, setAgree] = useState(false);
   const { loader } = useAppSelector((store) => store.cardSlice);
   const dispatch = useAppDispatch();
+
   const sendButton = agree
     ? <button type="button" onClick={() => dispatch(postSign(applicationId))} className="button">Send</button>
     : <button type="button" className="payment-schedule__buttons_disabled">Send</button>;

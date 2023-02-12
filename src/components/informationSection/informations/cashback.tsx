@@ -3,7 +3,7 @@ import '../informationSection.scss';
 
 const CashBack = () => {
   return (
-    <div className="information-section__cashbacks">
+    <div data-testid="cashback-section" className="information-section__cashbacks">
       <div className="information-section__cashback">
         <p className="information-section__cashback_info">For food delivery, cafes and restaurants</p>
         <p className="information-section__cashback_percent">5%</p>

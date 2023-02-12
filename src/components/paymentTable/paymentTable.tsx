@@ -11,6 +11,7 @@ interface IPaymentTableProps{
 }
 export const PaymentTable = ({ applicationId }:IPaymentTableProps) => {
   const { monthlyPayments, loader } = useAppSelector((store) => store.cardSlice);
+
   if (!monthlyPayments || loader) {
     return (
       <Loader />

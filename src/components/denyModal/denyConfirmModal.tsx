@@ -3,12 +3,13 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import './denyModal.scss';
 
-export const DenyConfirmModal = () => {
+export const DenyConfirmModal = React.memo(() => {
   const dispatch = useAppDispatch();
   const closeDenyModal = () => {
     dispatch(changeConfirmModalStatus(false));
     localStorage.removeItem('offers');
   };
+
   return (
     <div className="deny-modal">
       <div className="deny-modal__header">
@@ -27,4 +28,4 @@ export const DenyConfirmModal = () => {
       </Link>
     </div>
   );
-};
+});

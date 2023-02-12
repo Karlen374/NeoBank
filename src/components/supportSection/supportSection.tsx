@@ -41,11 +41,11 @@ export const SupportSection = () => {
         </div>
         <div className="support-section__input_submit">
           <SendIcon />
-          <input type="submit" value="subscribe" />
+          <input data-testid="submit-email" type="submit" value="subscribe" />
         </div>
       </div>
     </form>
-  ) : <p>You are already subscribed to the bank&apos;s newsletter</p>;
+  ) : <p data-testid="email">You are already subscribed to the bank&apos;s newsletter</p>;
 
   return (
     <section className="support-section wrapper">

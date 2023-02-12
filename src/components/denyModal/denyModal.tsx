@@ -2,7 +2,7 @@ import { changeConfirmModalStatus, changeModalStatus, useAppDispatch } from '@ut
 import React from 'react';
 import './denyModal.scss';
 
-export const DenyModal = () => {
+export const DenyModal = React.memo(() => {
   const dispatch = useAppDispatch();
   const openConfirmModal = () => {
     dispatch(changeModalStatus(false));
@@ -34,4 +34,4 @@ export const DenyModal = () => {
       </div>
     </div>
   );
-};
+});

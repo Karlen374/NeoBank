@@ -3,7 +3,9 @@ import './AdvertistingSection.scss';
 import CardImage from '../../public/assets/cardImage.png';
 import NavButton from './navButton';
 
-export const AdvertistingSection = () => {
+export const AdvertistingSection = React.memo(() => {
+  const offers = JSON.parse(localStorage.getItem('offers'));
+  const navButton = !offers ? <a href="#customize-form" type="button" className="button">Button Text</a> : <NavButton />;
   return (
     <section className="advertisting-section wrapper">
       <div className="advertisting-section__info">
@@ -27,11 +29,11 @@ export const AdvertistingSection = () => {
             <p className="advertisting-_subHeader">Card service is free</p>
           </div>
         </div>
-        <NavButton />
+        {navButton}
       </div>
       <div className="advertisting-section__img">
         <img src={CardImage} alt="card img" />
       </div>
     </section>
   );
-};
+});

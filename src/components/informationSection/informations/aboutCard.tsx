@@ -9,7 +9,7 @@ import '../informationSection.scss';
 const AboutCard = () => {
   return (
     <>
-      <div className="information-section__firstTerms">
+      <div data-testid="about-section" className="information-section__firstTerms">
         <div className="information-section__firstTerm">
           <MoneyDuotoneIcon />
           <h2 className="information-section__firstTerm_header">Up to 50 000 ₽</h2>
